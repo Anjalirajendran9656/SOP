@@ -3034,12 +3034,12 @@ function renderQALogTable() {
     }
     if (appState.qaLogFilters.dateFrom) {
         const fromDate = new Date(appState.qaLogFilters.dateFrom);
-        filteredLog = filteredLog.filter(log => new Date(log.search_timestamp) >= fromDate);
+        filteredLog = filteredLog.filter(log => new Date(log.search_time) >= fromDate);
     }
     if (appState.qaLogFilters.dateTo) {
         const toDate = new Date(appState.qaLogFilters.dateTo);
         toDate.setHours(23, 59, 59, 999);
-        filteredLog = filteredLog.filter(log => new Date(log.search_timestamp) <= toDate);
+        filteredLog = filteredLog.filter(log => new Date(log.search_time) <= toDate);
     }
 
     loadingState.style.display = 'none';
